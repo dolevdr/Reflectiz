@@ -1,0 +1,12 @@
+<form #form="ngForm" (ngSubmit)="login(form)">
+  <mat-form-field>
+    <mat-label>username</mat-label>
+    <input (input)="hideMessages()" ngModel #username="ngModel" name="username" required matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>password</mat-label>
+    <input (input)="hideMessages()" type="password" ngModel #pass="ngModel" name="password" required matInput />
+  </mat-form-field>
+  <button color="primary" mat-raised-button [disabled]="!form.valid">Login</button>
+  <p class="error" *ngIf="showMessage">{{ error }}</p>
+</form>

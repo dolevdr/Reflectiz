@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSliderModule } from '@angular/material/slider'
+import { Router } from '@angular/router'
 import { finalize } from 'rxjs'
 import { FormService } from 'src/app/core/services/form.service'
 import { ViewService } from 'src/app/core/services/view.service'
@@ -33,7 +34,7 @@ import { seats } from '../../core/constants/form'
 export class FormComponent implements OnInit {
   seats = seats
   sendFormLoading = false
-  constructor(private formService: FormService, private viewService: ViewService) {}
+  constructor(private formService: FormService, private viewService: ViewService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -47,5 +48,9 @@ export class FormComponent implements OnInit {
 
   now() {
     return new Date()
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login'])
   }
 }

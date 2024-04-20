@@ -52,6 +52,16 @@ form {
       margin-bottom: 0.5rem;
     }
   }
+  .admin {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+    .owner {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }
 
 .button {
