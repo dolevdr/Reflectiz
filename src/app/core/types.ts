@@ -2,7 +2,7 @@ export type Form = {
   fullName: string
   gender: 'male' | 'female'
   email: string
-  birthDate: Date | null
+  birthDate: Date
   location: Location
   hobbies: string[]
   favoriteColor: string
@@ -26,7 +26,7 @@ export const initialForm: Form = {
   fullName: '',
   gender: 'male',
   email: '',
-  birthDate: null,
+  birthDate: new Date(),
   location: initialLocation,
   hobbies: [],
   favoriteColor: '',

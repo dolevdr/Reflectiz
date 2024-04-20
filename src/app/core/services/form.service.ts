@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { BehaviorSubject, catchError, delay, map, take, tap } from 'rxjs'
 import { Form } from '../types'
-import { ViewService } from './view.service'
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +8,9 @@ import { ViewService } from './view.service'
 export class FormService {
   private _form$ = new BehaviorSubject<Form[]>([])
   form$ = this._form$.asObservable()
+  private columns: string[] = []
 
-  constructor(private viewService: ViewService) {}
+  constructor() {}
 
   sendForm(form: Form) {
     return this._form$.pipe(
@@ -30,6 +30,17 @@ export class FormService {
 
   getAllForms() {
     const forms = localStorage.getItem('forms') ?? '[]'
-    this._form$.next(JSON.parse(forms))
+    const formsParsed = JSON.parse(forms).map((form: Form) => {
+      return { ...form, birthDate: form.birthDate.toString().replace(/[TZ]/g, ' ') }
+    })
+    this._form$.next(formsParsed)
+  }
+
+  getColums() {
+    const forms = JSON.parse(localStorage.getItem('forms') ?? '[]')
+    if (!this.columns.length) {
+      this.columns = forms[0] ? Object.keys(forms[0]) : []
+    }
+    return this.columns
   }
 }

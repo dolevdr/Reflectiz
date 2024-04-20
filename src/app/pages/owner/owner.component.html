@@ -1,1 +1,11 @@
-<p>owner works!</p>
+<mat-tab-group *ngIf="!!(formService.form$ | async)?.length; else noData" mat-stretch-tabs mat-align-tabs="center">
+  <mat-tab label="Table"> <app-table></app-table> </mat-tab>
+  <mat-tab label="Engine Chart"> Content 2 </mat-tab>
+  <mat-tab label="Colors Chart"> Content 3 </mat-tab>
+  <mat-tab label="Common Hobby"> Content 3 </mat-tab>
+</mat-tab-group>
+<ng-template #noData>
+  <div class="no-data">
+    <h1>No data</h1>
+  </div>
+</ng-template>
