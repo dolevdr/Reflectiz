@@ -1,0 +1,88 @@
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <h2>Please fill the form below</h2>
+  <div class="content">
+    <div class="left">
+      <mat-form-field>
+        <mat-label>Full Name</mat-label>
+        <input name="fullName" ngModel #fullName="ngModel" required matInput type="text" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select name="gender" ngModel #gender="ngModel" required>
+          <mat-option value="male">male</mat-option>
+          <mat-option value="female">female</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input name="email" email ngModel #email="ngModel" required matInput type="email" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Choose your birthday</mat-label>
+        <div class="date-value" [class.initial-margin]="!birthDate.value">
+          <input
+            [max]="now()"
+            name="birthDate"
+            ngModel
+            #birthDate="ngModel"
+            required
+            readonly
+            matInput
+            [matDatepicker]="picker"
+          />
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        </div>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker [startAt]="now()" #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>country</mat-label>
+        <input name="country" ngModel #country="ngModel" required matInput type="text" />
+      </mat-form-field>
+    </div>
+    <div class="right">
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input name="address" ngModel #address="ngModel" required matInput type="text" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input name="city" ngModel #city="ngModel" required matInput type="text" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Hobbies</mat-label>
+        <mat-select name="hobbies" ngModel #hobbies="ngModel" multiple required>
+          <mat-option value="state1">state1</mat-option>
+          <mat-option value="state2">state2</mat-option>
+          <mat-option value="state3">state3</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Color</mat-label>
+        <input name="favoriteColor" ngModel #favoriteColor="ngModel" required matInput type="text" />
+      </mat-form-field>
+
+      <div class="seats">
+        <mat-label>Seats</mat-label>
+        <mat-slider color="primary" #slider [step]="1" [max]="seats.max" [min]="seats.min"></mat-slider>
+        <input class="num-of-seats-input" matInput name="amountOfSeats" [(ngModel)]="slider.value" type="text" />
+      </div>
+
+      <mat-form-field>
+        <mat-label>Motor</mat-label>
+        <mat-select name="motorType" ngModel #motorType="ngModel" required>
+          <mat-option value="electric">electric</mat-option>
+          <mat-option value="fuel">fuel</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <button color="primary" mat-raised-button [disabled]="!form.valid">Submit</button>
+</form>

@@ -1,0 +1,71 @@
+form {
+  display: flex;
+  width: 70%;
+  text-align: center;
+  flex-direction: column;
+  margin-left: calc(15% - 1rem);
+  margin-top: 2%;
+  padding: 1rem;
+  box-shadow: 0px 4px 14px 7px rgba(8, 34, 62, 0.1490196078);
+  border-radius: 10px;
+  height: 80%;
+  max-height: 30rem;
+  overflow-y: scroll;
+
+  .content {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    .left,
+    .right {
+      width: 40%;
+    }
+
+    .seats {
+      display: flex;
+      gap: 0.5rem;
+      width: 100%;
+      align-items: center;
+
+      .num-of-seats-input {
+        width: 1rem;
+      }
+    }
+
+    mat-slider {
+      min-width: 44%;
+      margin-right: -5%;
+    }
+
+    .date-value {
+      display: flex;
+      direction: rtl;
+      min-width: 7rem;
+    }
+
+    .initial-margin {
+      margin-top: 1rem;
+    }
+  }
+}
+
+button {
+  width: 60%;
+  margin-left: 20%;
+  margin: 5% 20% 0;
+}
+.mat-form-field {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  button {
+    width: 15rem;
+    margin-left: calc(50% - 7.5rem) !important;
+  }
+  mat-slider {
+    min-width: 128px;
+    margin-right: 0% !important;
+  }
+}
