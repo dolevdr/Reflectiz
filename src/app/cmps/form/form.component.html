@@ -20,7 +20,7 @@
         <input name="email" email ngModel #email="ngModel" required matInput type="email" />
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="date">
         <mat-label>Choose your birthday</mat-label>
         <div class="date-value" [class.initial-margin]="!birthDate.value">
           <input
@@ -84,5 +84,8 @@
       </mat-form-field>
     </div>
   </div>
-  <button color="primary" mat-raised-button [disabled]="!form.valid">Submit</button>
+  <div class="button">
+    <button color="primary" mat-raised-button [disabled]="!form.valid || sendFormLoading">Submit</button>
+    <mat-spinner [diameter]="30" *ngIf="sendFormLoading"></mat-spinner>
+  </div>
 </form>

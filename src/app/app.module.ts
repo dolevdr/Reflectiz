@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { MatDialogModule } from '@angular/material/dialog'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
@@ -10,6 +11,6 @@ import { HeaderComponent } from './cmps/header/header.component'
   declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HeaderComponent, FooterComponent, BrowserAnimationsModule]
+  imports: [BrowserModule, MatDialogModule, AppRoutingModule, HeaderComponent, FooterComponent, BrowserAnimationsModule]
 })
 export class AppModule {}

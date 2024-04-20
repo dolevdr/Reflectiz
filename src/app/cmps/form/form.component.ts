@@ -5,8 +5,12 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatNativeDateModule } from '@angular/material/core'
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSelectModule } from '@angular/material/select'
 import { MatSliderModule } from '@angular/material/slider'
+import { finalize } from 'rxjs'
+import { FormService } from 'src/app/core/services/form.service'
+import { ViewService } from 'src/app/core/services/view.service'
 import { seats } from '../../core/constants/form'
 
 @Component({
@@ -20,19 +24,25 @@ import { seats } from '../../core/constants/form'
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule
+    MatSliderModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
   seats = seats
-  constructor() {}
+  sendFormLoading = false
+  constructor(private formService: FormService, private viewService: ViewService) {}
 
   ngOnInit(): void {}
 
   submit(f: NgForm) {
-    console.log(f.value)
+    this.sendFormLoading = true
+    this.formService
+      .sendForm(f.value)
+      .pipe(finalize(() => (this.sendFormLoading = false)))
+      .subscribe(() => this.viewService.setSuccessSendForm(true))
   }
 
   now() {

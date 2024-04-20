@@ -1,1 +1,7 @@
-<app-form></app-form>
+<app-form *ngIf="!!(viewService.sendSuccessForm$ | async) === false; else success"></app-form>
+<ng-template #success>
+  <app-simple-text
+    title="Thank you for your submission!"
+    text="We got your submission and an email will be sent with your match"
+  ></app-simple-text>
+</ng-template>
