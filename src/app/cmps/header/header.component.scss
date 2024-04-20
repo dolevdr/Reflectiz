@@ -1,5 +1,10 @@
-header{
-    height: 7rem;
-    background: linear-gradient(210deg, #06001d 3%, rgba(0, 57, 122, 1) 25%, rgb(3, 80, 173) 45%);
-    border-radius: 0 0 15px 15px;
+header {
+  height: 7rem;
+  background: linear-gradient(210deg, #06001d 3%, rgba(0, 57, 122, 1) 25%, rgb(3, 80, 173) 45%);
+  border-radius: 0 0 15px 15px;
+  display: flex;
+  width: 100%;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-owner',
@@ -9,10 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./owner.component.scss']
 })
 export class OwnerComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

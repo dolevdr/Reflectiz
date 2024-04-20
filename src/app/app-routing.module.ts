@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { OwnerGuard } from './core/guards/owner.guard'
 import { FormsResolver } from './core/resolvers/forms.resolver'
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
