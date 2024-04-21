@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common'
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core'
 import { MatTabsModule } from '@angular/material/tabs'
 import Chart from 'chart.js/auto'
+import { FromBottom } from 'src/app/animations'
 import { genders, hobbies } from 'src/app/core/constants/form'
 import { ChartsService } from 'src/app/core/services/charts.service'
 import { FormService } from 'src/app/core/services/form.service'
@@ -11,6 +12,7 @@ import { TableComponent } from '../../cmps/table/table.component'
   selector: 'app-owner',
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  animations: [FromBottom],
   templateUrl: './owner.component.html',
   styleUrls: ['./owner.component.scss'],
   imports: [CommonModule, MatTabsModule, TableComponent]

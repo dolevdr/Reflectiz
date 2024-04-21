@@ -10,4 +10,14 @@ form {
     color: red;
     font-size: 0.8rem;
   }
+  button {
+    width: 15%;
+    margin-top: 5%;
+    max-width: 15rem;
+  }
+  mat-form-field {
+    width: 30%;
+    height: 15%;
+    font-size: 1rem;
+  }
 }
