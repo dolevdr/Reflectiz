@@ -20,6 +20,8 @@
   <canvas id="Hobbies">{{ this.enginePerGenderConfig }}</canvas>
 </div>
 
-<div *ngIf="!(formService.form$ | async)?.length" class="no-data">
-  <h1>No data</h1>
+<div *ngIf="!(formService.form$ | async)?.length" class="no-data-container">
+  <img src="../../../assets/no-data.svg" alt="" />
+  <div class="no-data">No Data To Display</div>
+  <p (click)="navToHome()">Go Back</p>
 </div>

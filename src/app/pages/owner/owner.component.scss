@@ -9,3 +9,29 @@
   width: 20%;
   margin: 5% 0 0 40%;
 }
+.no-data-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% 0 0 15%;
+  p {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 3%;
+  }
+}
+.no-data {
+  font-size: 1.1rem;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  width: 75%;
+  background-color: rgb(222, 239, 255);
+  height: 3rem;
+  text-align: center;
+  max-width: 20rem;
+}

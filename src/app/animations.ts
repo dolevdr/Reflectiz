@@ -81,7 +81,7 @@ export const FromBottom = trigger('FromBottom', [
   transition(':enter', [
     useAnimation(transformTransition, {
       params: {
-        transformStart: 'translateY(130%)',
+        transformStart: 'translateY(100vh)',
         transformEnd: 'translateY(1.5rem)',
         opacityStart: 1,
         opacityEnd: 1,

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core'
 import { MatTabsModule } from '@angular/material/tabs'
+import { Router } from '@angular/router'
 import Chart from 'chart.js/auto'
 import { FromBottom } from 'src/app/animations'
 import { genders, hobbies } from 'src/app/core/constants/form'
@@ -22,7 +23,7 @@ export class OwnerComponent implements OnInit {
   hobbiesConfig: any
   gendersChart: any
 
-  constructor(public formService: FormService, private chartService: ChartsService) {}
+  constructor(public formService: FormService, private chartService: ChartsService, private router: Router) {}
 
   ngOnInit(): void {
     this.chartService.groupEnginesByGender()
@@ -30,7 +31,9 @@ export class OwnerComponent implements OnInit {
     this.chartService.groupGender()
     this.createChart()
   }
-
+  navToHome() {
+    this.router.navigate(['/home'])
+  }
   createChart() {
     const [series1, series2] = this.chartService.updateEngineConfig()
     this.enginePerGenderConfig = new Chart('Motor', {

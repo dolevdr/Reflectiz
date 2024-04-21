@@ -59,7 +59,6 @@ export class ChartsService {
         numberEachGender[form.gender] = 1
       }
     })
-    console.log(numberEachGender)
   }
 
   updateGenderConfig() {
