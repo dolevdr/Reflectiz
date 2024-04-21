@@ -33,3 +33,14 @@ export const initialForm: Form = {
   amountOfSeats: 2,
   motorType: 'electric'
 }
+
+export const engineChartMale: {
+  [key: string]: number
+} = {}
+export const engineChartFemale: {
+  [key: string]: number
+} = {}
+
+export const hobbiesChart: { [key: string]: number } = {}
+
+export const numberEachGender: { [key: string]: number } = {}

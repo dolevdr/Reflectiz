@@ -58,9 +58,7 @@
       <mat-form-field>
         <mat-label>Hobbies</mat-label>
         <mat-select name="hobbies" ngModel #hobbies="ngModel" multiple required>
-          <mat-option value="state1">state1</mat-option>
-          <mat-option value="state2">state2</mat-option>
-          <mat-option value="state3">state3</mat-option>
+          <mat-option *ngFor="let hobby of hobbiesArray" value="{{ hobby }}">{{ hobby }}</mat-option>
         </mat-select>
       </mat-form-field>
 

@@ -1,11 +1,19 @@
-<mat-tab-group *ngIf="!!(formService.form$ | async)?.length; else noData" mat-stretch-tabs mat-align-tabs="center">
+<mat-tab-group [class.hidden]="!(formService.form$ | async)?.length" #tabGroup mat-stretch-tabs mat-align-tabs="center">
   <mat-tab label="Table"> <app-table></app-table> </mat-tab>
-  <mat-tab label="Engine Chart"> Content 2 </mat-tab>
-  <mat-tab label="Colors Chart"> Content 3 </mat-tab>
-  <mat-tab label="Common Hobby"> Content 3 </mat-tab>
+  <mat-tab label="Engine Chart"> </mat-tab>
+  <mat-tab label="Colors Chart"> </mat-tab>
+  <mat-tab label="Common Hobby"> </mat-tab>
 </mat-tab-group>
-<ng-template #noData>
-  <div class="no-data">
-    <h1>No data</h1>
-  </div>
-</ng-template>
+<div class="canvas" [class.hidden]="tabGroup?.selectedIndex !== 1">
+  <canvas id="Motor">{{ this.enginePerGenderConfig }}</canvas>
+</div>
+<div class="genders" [class.hidden]="tabGroup?.selectedIndex !== 2">
+  <canvas id="Gender">{{ this.enginePerGenderConfig }}</canvas>
+</div>
+<div class="canvas" [class.hidden]="tabGroup?.selectedIndex !== 3">
+  <canvas id="Hobbies">{{ this.enginePerGenderConfig }}</canvas>
+</div>
+
+<div *ngIf="!(formService.form$ | async)?.length" class="no-data">
+  <h1>No data</h1>
+</div>

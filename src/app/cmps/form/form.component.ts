@@ -12,7 +12,7 @@ import { Router } from '@angular/router'
 import { finalize } from 'rxjs'
 import { FormService } from 'src/app/core/services/form.service'
 import { ViewService } from 'src/app/core/services/view.service'
-import { seats } from '../../core/constants/form'
+import { hobbies, seats } from '../../core/constants/form'
 
 @Component({
   selector: 'app-form',
@@ -34,6 +34,7 @@ import { seats } from '../../core/constants/form'
 export class FormComponent implements OnInit {
   seats = seats
   sendFormLoading = false
+  hobbiesArray = hobbies
   constructor(private formService: FormService, private viewService: ViewService, private router: Router) {}
 
   ngOnInit(): void {}
