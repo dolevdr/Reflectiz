@@ -4,4 +4,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 In Order to run This code just run `npm i` and after that: `npm run start`.
 
-Improtant: In order to view the charts, you will need to login. I will send the details by mail
+*Improtant:* In order to view the charts, you will need to login. I will send the details by mail
